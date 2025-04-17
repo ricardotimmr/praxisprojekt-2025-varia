@@ -28,6 +28,10 @@ Die fortlaufende inhaltliche und technische Dokumentation des Projekts wird im z
 
 📄 [Zum Wiki](https://github.com/ricardotimmr/praxisprojekt-2025/wiki)
 
+## Projektboard
+
+📄 [Zum Projektboard](https://github.com/users/ricardotimmr/projects/5)
+
 ## Lizenz
 
 Dieses Projekt unterliegt keiner öffentlichen Lizenz, da es sich um ein akademisches Studienprojekt handelt. Eine Veröffentlichung oder Weiterverwendung der Inhalte ist nur nach Rücksprache mit dem Autor gestattet.
