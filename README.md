@@ -16,21 +16,13 @@ Das finale Thema sowie die genaue Ausrichtung der Anwendung befinden sich aktuel
 - Auseinandersetzung mit relevanten Technologien, Frameworks und Designprinzipien
 - Erstellung eines wissenschaftlichen Exposés zur Vorbereitung der späteren Bachelorarbeit
 
-## Projektübersicht & Visualisierung
-
-Eine visuelle Strukturierung der bisherigen Architekturentscheidungen sowie konzeptioneller Überlegungen befindet sich auf folgendem Miro-Board:
-
-🔗 [Miro-Board: ADR-Map & Konzeptskizzen](https://miro.com/app/board/uXjVLCCKknk=)
-
-## Projektdokumentation
+## Projektdokumentation und -ressourcen
 
 Die fortlaufende inhaltliche und technische Dokumentation des Projekts wird im zugehörigen GitHub-Wiki gepflegt:
 
 📄 [Zum Wiki](https://github.com/ricardotimmr/praxisprojekt-2025/wiki)
-
-## Projektboard
-
 📄 [Zum Projektboard](https://github.com/users/ricardotimmr/projects/5)
+📄 [Miro-Board](https://miro.com/app/board/uXjVLCCKknk=)
 
 ## Lizenz
 
