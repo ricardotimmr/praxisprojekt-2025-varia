@@ -23,6 +23,7 @@ Die fortlaufende inhaltliche und technische Dokumentation des Projekts wird im z
 - 📄 **Wiki**: Detaillierte technische Dokumentation und Anleitungen zur Nutzung der Anwendung findest du im [Projekt-Wiki](https://github.com/ricardotimmr/praxisprojekt-2025/wiki)
 - 📄 **Kanban Board**: [Kanban Board mit Issues für das Praxisprojekt](https://github.com/users/ricardotimmr/projects/5)
 - 📄 **Miro-Board**: Weitere Details und die visuelle Darstellung des Projekts findest du auf dem [Miro-Board](https://miro.com/app/board/uXjVLCCKknk=)
+- 📄 **Weekly Documentation**: Eine Dokumentation des Prozesses findest du in der [Weekly Documentation](https://github.com/ricardotimmr/praxisprojekt-2025/wiki/Weekly-Documentation)
 
 ## Lizenz
 
