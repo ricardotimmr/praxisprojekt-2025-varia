@@ -26,12 +26,15 @@ Der Fokus im Praxisprojekt liegt auf der Frontend-Entwicklung und der Umsetzung 
 
 ## Technologie-Stack
 
-- **Frontend**:
-- **Backend**:
-- **Upload**:
-- **Datenbank**:
-- **Sicherheit**:
-- **Deployment**:
+- **Frontend**: React (geplant), Vite, TailwindCSS, Zustand, Atomic Design, Design Tokens
+- **Backend**: Wird im Rahmen der Bachelorarbeit implementiert (API, Authentifizierung, Speicherung von Konfigurationen)
+- **Datenbank**: Noch offen / abhängig vom späteren Backend-Konzept (z. B. PostgreSQL, MongoDB, Supabase)
+- **Sicherheit**: 
+  - Clientseitig: Input-Validierung, barrierearme UI (WAI-ARIA, Kontrast, Tastaturbedienung)
+  - Serverseitig: Wird im Backend-Kontext behandelt
+- **Deployment**: Geplant via Vercel oder Netlify (für Frontend), später ggf. Docker (für Produktion & Backend)
+
+**Der Tech-Stack ist noch nicht final entschieden**
 
 ---
 
