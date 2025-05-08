@@ -1,29 +1,50 @@
-# Praxisprojekt 2025
+# Praxisprojekt 2025 – Modulares Webtool zur Produktdarstellung
 
-Dieses Repository dient als Arbeits- und Dokumentationsgrundlage für das Praxisprojekt im Rahmen des Bachelorstudiengangs Medieninformatik an der TH Köln im Sommersemester 2025.
+Dieses Repository dokumentiert die Entwicklung eines modularen Webtools zur Erstellung interaktiver Produktdarstellungen für Corporate Websites. Es entsteht im Rahmen des Praxisprojekts im Bachelorstudiengang Medieninformatik an der TH Köln im Sommersemester 2025.
+
+---
 
 ## Zielsetzung
 
-Dieses Projekt dient als Ausgangspunkt für ein praxisnahes Webentwicklungsprojekt im Rahmen des Bachelorstudiengangs Medieninformatik an der TH Köln. Im Fokus steht die konzeptionelle und gestalterische Auseinandersetzung mit einer webbasierten Anwendung, die ein reales Problem adressiert und sich durch eine klare Nutzerzentrierung auszeichnet.
+Ziel des Projekts ist die Konzeption und prototypische Umsetzung einer webbasierten Anwendung, mit der UX-/UI-Designer:innen, Entwickler:innen und Content-Teams interaktive, CI-konforme Produktmodule gestalten und für den Einsatz in Unternehmenswebsites exportieren können.
 
-Das finale Thema sowie die genaue Ausrichtung der Anwendung befinden sich aktuell noch in der Ausarbeitung. Geplant ist ein starker Fokus auf Frontend-Entwicklung und UX/UI-Design. Die Ergebnisse des Projekts bilden die Grundlage für eine darauf aufbauende Bachelorarbeit, in der der Backend-Bereich vertieft behandelt werden soll.
+Das Tool ermöglicht die visuelle Konfiguration von Modultypen wie Feature-Slider oder 360°-Viewern und exportiert diese als Web Components oder Snippets, die in bestehende Systeme integrierbar sind. Es fördert die Wiederverwendbarkeit, Modularität und Markenkonformität in der digitalen Produktkommunikation.
+
+Der Fokus im Praxisprojekt liegt auf der Frontend-Entwicklung und der Umsetzung zentraler UX/UI-Funktionen. Das Projekt bildet die Grundlage für eine anschließende Bachelorarbeit, in der die Backend-Architektur und Produktivsetzung weiterentwickelt werden.
+
+---
 
 ## Inhalte
 
-- Einarbeitung in potenzielle Themenfelder und Problemstellungen mit Relevanz für Webentwicklung und UX/UI
-- Ideengenerierung und konzeptionelle Ausarbeitung möglicher Anwendungsszenarien
-- Prototypische Entwicklung erster Komponenten oder Interfaces im Frontend
-- Auseinandersetzung mit relevanten Technologien, Frameworks und Designprinzipien
-- Erstellung eines wissenschaftlichen Exposés zur Vorbereitung der späteren Bachelorarbeit
+- Konzeption eines modularen Komponenten-Systems zur Produktdarstellung
+- UI/UX-Design für ein intuitives Konfigurationstool
+- Entwicklung funktionaler Proof of Concepts zu Export, CI-Anpassung, Responsivität etc.
+- Implementierung eines responsiven, barrierearmen Interfaces mit React und TailwindCSS
+- Erstellung eines wissenschaftlichen Exposés und begleitender Dokumentation
 
-## Projektdokumentation und -ressourcen
+---
 
-Die fortlaufende inhaltliche und technische Dokumentation des Projekts wird im zugehörigen GitHub-Wiki gepflegt:
+## Technologie-Stack
 
-- 📄 **Wiki**: Detaillierte technische Dokumentation und Anleitungen zur Nutzung der Anwendung findest du im [Projekt-Wiki](https://github.com/ricardotimmr/praxisprojekt-2025/wiki)
-- 📄 **Kanban Board**: [Kanban Board mit Issues für das Praxisprojekt](https://github.com/users/ricardotimmr/projects/5)
-- 📄 **Miro-Board**: Weitere Details und die visuelle Darstellung des Projekts findest du auf dem [Miro-Board](https://miro.com/app/board/uXjVLCCKknk=)
-- 📄 **Weekly Documentation**: Eine Dokumentation des Prozesses findest du in der [Weekly Documentation](https://github.com/ricardotimmr/praxisprojekt-2025/wiki/Weekly-Documentation)
+- **Frontend**:
+- **Backend**:
+- **Upload**:
+- **Datenbank**:
+- **Sicherheit**:
+- **Deployment**:
+
+---
+
+## Projektdokumentation und Ressourcen
+
+Die technische und inhaltliche Dokumentation wird im zugehörigen GitHub-Wiki gepflegt:
+
+- 📄 **Wiki**: [Detaillierte technische Dokumentation](https://github.com/ricardotimmr/praxisprojekt-2025/wiki)
+- 📄 **Kanban Board**: [Projektmanagement via GitHub Projects](https://github.com/users/ricardotimmr/projects/5)
+- 📄 **Miro-Board**: [Visuelle Projektstruktur](https://miro.com/app/board/uXjVLCCKknk=)
+- 📄 **Weekly Documentation**: [Fortlaufende Projektdokumentation](https://github.com/ricardotimmr/praxisprojekt-2025/wiki/Weekly-Documentation)
+
+---
 
 ## Lizenz
 
