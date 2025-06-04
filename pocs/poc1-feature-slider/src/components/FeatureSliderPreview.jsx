@@ -172,69 +172,100 @@ const FeatureSliderPreview = ({ config, setModuleConfig }) => {
             e.target.src = `https://placehold.co/400x300/D8C3A5/8E8D8A?text=Bild+${currentSlideIndex + 1}`
           }}
         />
+
+
+        {/* Navigation Arrows */}
         {config.images.length > 1 && (
           <>
+            {/* Prev Arrow */}
             <button
               style={{
                 position: 'absolute',
                 left: '0.5rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
+                width: '2.5rem', // Quadratisch!
+                height: '2.5rem',
+                padding: 0,
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 backgroundColor: 'rgba(0,0,0,0.3)',
                 color: 'white',
-                padding: '0.5rem',
-                borderRadius: '9999px',
-                zIndex: 20,
                 border: 'none',
                 cursor: 'pointer',
+                boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
+                zIndex: 20,
+                transition: 'background 0.3s, box-shadow 0.3s',
               }}
               onClick={goToPrevSlide}
               disabled={isTransitioning}
+              aria-label="Vorheriges Bild"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ height: '1.5rem', width: '1.5rem' }}
+                style={{
+                  width: '1.5rem',
+                  height: '1.5rem',
+                  display: 'block',
+                  transform: 'translateX(-0.1rem)',
+                }}
+                viewBox="0 0 20 20" // Quadratisches ViewBox!
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
+                  d="M13 15l-5-5 5-5"
                 />
               </svg>
             </button>
+            {/* Next Arrow */}
             <button
               style={{
                 position: 'absolute',
                 right: '0.5rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
+                width: '2.5rem',
+                height: '2.5rem',
+                padding: 0,
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 backgroundColor: 'rgba(0,0,0,0.3)',
                 color: 'white',
-                padding: '0.5rem',
-                borderRadius: '9999px',
-                zIndex: 20,
                 border: 'none',
                 cursor: 'pointer',
+                boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
+                zIndex: 20,
+                transition: 'background 0.3s, box-shadow 0.3s',
               }}
               onClick={goToNextSlide}
               disabled={isTransitioning}
+              aria-label="Nächstes Bild"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ height: '1.5rem', width: '1.5rem' }}
+                style={{
+                  width: '1.5rem',
+                  height: '1.5rem',
+                  display: 'block',
+                  transform: 'translateX(0.1rem)',
+                }}
+                viewBox="0 0 20 20"
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
+                  d="M7 5l5 5-5 5"
                 />
               </svg>
             </button>
