@@ -1,0 +1,97 @@
+/* Custom slider thumb styles for 360 Viewer */
+.slider-thumb-sleek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px; /* Adjust width for the line */
+  height: 3px; /* Thin line */
+  background: var(--accent-color); /* Use CSS variable for accent color */
+  border-radius: 2px; /* Slightly rounded ends */
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin-top: -1px; /* Adjust to center vertically on the track */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-thumb-sleek::-moz-range-thumb {
+  width: 30px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-thumb-sleek::-ms-thumb {
+  width: 30px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style the track */
+.slider-thumb-sleek::-webkit-slider-runnable-track {
+  background: #cbd5e1; /* gray-300 for the track */
+  border-radius: 5px;
+  height: 2px;
+}
+
+.slider-thumb-sleek::-moz-range-track {
+  background: #cbd5e1;
+  border-radius: 5px;
+  height: 2px;
+}
+
+.slider-thumb-sleek::-ms-track {
+  background: #cbd5e1;
+  border-radius: 5px;
+  height: 2px;
+}
+
+/* Change cursor to grabbing when dragging */
+.slider-thumb-sleek:active::-webkit-slider-thumb {
+  cursor: grabbing;
+}
+.slider-thumb-sleek:active::-moz-range-thumb {
+  cursor: grabbing;
+}
+.slider-thumb-sleek:active::-ms-thumb {
+  cursor: grabbing;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) { /* md breakpoint */
+  .main-content {
+    flex-direction: row;
+  }
+  .preview-aside {
+    order: initial; /* Reset order for lg */
+    position: static;
+    top: auto;
+    max-height: none;
+  }
+  .config-section {
+    order: initial; /* Reset order for lg */
+  }
+  .module-selection-card {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* lg:grid-cols-1 */
+  }
+}

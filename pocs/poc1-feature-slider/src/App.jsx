@@ -239,8 +239,8 @@ function App() {
                     border: 'none',
                     borderRadius: '9999px',
                     width: '2rem',
-    height: '2rem',
-    padding: 0,
+                    height: '2rem',
+                    padding: 0,
                     cursor: 'pointer',
                   }}
                   onClick={() =>
