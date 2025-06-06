@@ -77,6 +77,11 @@
   animation: spin 1s linear infinite;
 }
 
+/* Hotspot Info Box Hover */
+.hotspot-item:hover .hotspot-info-box {
+  opacity: 1;
+}
+
 /* Responsive adjustments */
 @media (min-width: 768px) { /* md breakpoint */
   .main-content {
@@ -94,4 +99,37 @@
   .module-selection-card {
     grid-template-columns: repeat(1, minmax(0, 1fr)); /* lg:grid-cols-1 */
   }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .preview-aside {
+    order: 1; /* lg:order-last */
+  }
+  .config-section {
+    order: 0; /* lg:order-first */
+  }
+}
+
+/* Hotspot Hover Feedback */
+.hotspot-item {
+  transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.2s cubic-bezier(.4,0,.2,1);
+}
+.hotspot-item:hover,
+.hotspot-item:focus {
+  transform: scale(1.18);
+  box-shadow: 0 8px 18px -2px rgba(44,44,44,0.25), 0 2px 6px -1px rgba(44,44,44,0.13);
+  z-index: 25;
+  cursor: pointer;
+}
+
+/* Info Box Animation */
+.hotspot-info-box {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(.4,0,.2,1);
+}
+.hotspot-item:hover .hotspot-info-box,
+.hotspot-item:focus .hotspot-info-box {
+  opacity: 1;
+  pointer-events: auto;
 }

@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import FeatureSliderPreview from './components/FeatureSliderPreview'
 import ColorPicker from './components/ColorPicker'
-import {
-  getShadowStyle,
-  getBorderStyle,
-  getWidthStyle,
-  getVerticalAlignmentStyle,
-  getContentAlignmentStyle,
-  getPaddingStyle,
-} from './utils/styleHelpers'
+import { getWidthStyle } from './utils/styleHelpers'
 
 // Basis-Konfiguration für den Feature Slider
 const defaultConfig = {
