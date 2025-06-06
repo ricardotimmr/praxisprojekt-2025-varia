@@ -2,13 +2,13 @@
 .slider-thumb-sleek::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 30px; /* Adjust width for the line */
-  height: 3px; /* Thin line */
-  background: var(--accent-color); /* Use CSS variable for accent color */
-  border-radius: 2px; /* Slightly rounded ends */
+  width: 30px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
   cursor: grab;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  margin-top: -1px; /* Adjust to center vertically on the track */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: -1px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -34,7 +34,7 @@
 
 /* Style the track */
 .slider-thumb-sleek::-webkit-slider-runnable-track {
-  background: #cbd5e1; /* gray-300 for the track */
+  background: #cbd5e1;
   border-radius: 5px;
   height: 2px;
 }
@@ -83,30 +83,30 @@
 }
 
 /* Responsive adjustments */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
   .main-content {
     flex-direction: row;
   }
   .preview-aside {
-    order: initial; /* Reset order for lg */
+    order: initial;
     position: static;
     top: auto;
     max-height: none;
   }
   .config-section {
-    order: initial; /* Reset order for lg */
+    order: initial;
   }
   .module-selection-card {
-    grid-template-columns: repeat(1, minmax(0, 1fr)); /* lg:grid-cols-1 */
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) { /* lg breakpoint */
   .preview-aside {
-    order: 1; /* lg:order-last */
+    order: 1;
   }
   .config-section {
-    order: 0; /* lg:order-first */
+    order: 0;
   }
 }
 

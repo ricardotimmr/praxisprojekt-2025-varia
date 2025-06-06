@@ -14,9 +14,9 @@ const Viewer360Preview = ({ config }) => {
   const viewerRef = useRef(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
-  const currentImageIndexRef = useRef(currentImageIndex) // Ref to hold currentImageIndex
-  const [isFullscreen, setIsFullscreen] = useState(false) // State for fullscreen mode
-  const [isLoadingImages, setIsLoadingImages] = useState(true) // State for image loading
+  const currentImageIndexRef = useRef(currentImageIndex)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [isLoadingImages, setIsLoadingImages] = useState(true)
 
   const wheelAccumulator = useRef(0);
 
@@ -33,7 +33,7 @@ const Viewer360Preview = ({ config }) => {
   // Preload images and manage loading state
   useEffect(() => {
     if (!images || images.length === 0) {
-      setIsLoadingImages(false) // No images to load
+      setIsLoadingImages(false)
       return
     }
 
@@ -74,9 +74,8 @@ const Viewer360Preview = ({ config }) => {
       document.exitFullscreen()
     } else {
       viewerRef.current.requestFullscreen().catch((err) => {
-        // This error is expected in environments like Canvas (iframes) without 'allowfullscreen'
         console.error(
-          `Error attempting to enable fullscreen: ${err.message} (${err.name}). This might be due to browser security policies in an embedded environment (iframe).`,
+          `Error attempting to enable fullscreen: ${err.message} (${err.name}).`,
         )
       })
     }
@@ -122,7 +121,7 @@ const Viewer360Preview = ({ config }) => {
 
       if (newIndex !== currentImageIndexRef.current) {
         setCurrentImageIndex(newIndex)
-        startX.current = currentX // Reset startX to prevent accumulated delta and jumping
+        startX.current = currentX
       }
     },
     [images.length],

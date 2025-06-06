@@ -184,7 +184,7 @@ const FeatureSliderPreview = ({ config, setModuleConfig }) => {
                 left: '0.5rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                width: '2.5rem', // Quadratisch!
+                width: '2.5rem',
                 height: '2.5rem',
                 padding: 0,
                 borderRadius: '50%',
