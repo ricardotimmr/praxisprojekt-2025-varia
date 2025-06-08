@@ -210,7 +210,6 @@ const Viewer360Preview = ({ config }) => {
         borderRadius: '0.5rem',
         position: 'relative',
         overflow: 'hidden',
-        padding: padding,
         backgroundColor: config.backgroundColor,
         color: config.textColor,
         cursor: 'grab',
