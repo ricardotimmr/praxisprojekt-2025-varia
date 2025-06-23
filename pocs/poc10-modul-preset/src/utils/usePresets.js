@@ -43,3 +43,5 @@ export const usePresets = (defaultConfig) => {
     deletePreset,
   }
 }
+
+export default usePresets
