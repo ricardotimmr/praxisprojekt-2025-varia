@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/werkstatt" element={<Werkstatt />} />
+          {/* <Route path="/werkstatt" element={<Werkstatt />} />
           <Route path="/dokumentation" element={<Dokumentation />} />
           <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
