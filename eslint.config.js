@@ -2,33 +2,17 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
-export default [
-  // Ignoriere build-Ordner
-  { ignores: ['dist'] },
-
-  // NODE: Lint für config files erlauben (Node.js Umgebung)
-  {
-    files: [
-      'tailwind.config.js',
-      'postcss.config.js',
-      'vite.config.js',
-      '*.cjs',
-      '*.mjs',
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      sourceType: 'script',
-      globals: globals.node, // <--- Hier werden node-globals (module, require, etc.) gesetzt!
-    },
-    rules: {
-      // Optional: nur sehr grobe Regeln hier erlauben, falls du willst
-    },
-  },
-
-  // React und Frontend-JS (wie gehabt)
+export default defineConfig([
+  globalIgnores(['dist']),
   {
     files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs['recommended-latest'],
+      reactRefresh.configs.vite,
+    ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -38,18 +22,8 @@ export default [
         sourceType: 'module',
       },
     },
-    plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
     rules: {
-      ...js.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
     },
   },
-]
+])
