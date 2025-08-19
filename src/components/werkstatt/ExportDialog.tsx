@@ -63,11 +63,18 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
         * {
             font-family: ${design.fontFamily || 'system-ui, -apple-system, sans-serif'};
         }
+        .module-wrapper {
+            min-height: 400px;
+            display: flex;
+            ${layout.horizontalAlign === 'links' ? 'justify-content: flex-start;' : layout.horizontalAlign === 'rechts' ? 'justify-content: flex-end;' : 'justify-content: center;'}
+            ${layout.verticalAlign === 'oben' ? 'align-items: flex-start;' : layout.verticalAlign === 'unten' ? 'align-items: flex-end;' : 'align-items: center;'}
+            padding: 16px;
+            background-color: #f8f9fa;
+        }
         .slider-container {
             position: relative;
             width: ${layout.width === 'voll' ? '100%' : layout.width === 'breit' ? '90%' : layout.width === 'schmal' ? '60%' : '80%'};
             max-width: 800px;
-            margin: 0 auto;
             background-color: ${design.backgroundColor};
             border-radius: 8px;
             overflow: hidden;
@@ -83,7 +90,7 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
         }
         .slide {
             position: relative;
-            height: 300px;
+            height: ${layout.height === 'niedrig' ? '200px' : layout.height === 'hoch' ? '350px' : layout.height === 'sehr-hoch' ? '400px' : '300px'};
             background-size: cover;
             background-position: center;
             display: none;
@@ -173,7 +180,8 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
     </style>
 </head>
 <body>
-    <div class="slider-container">
+    <div class="module-wrapper">
+        <div class="slider-container">
         <div class="slider-inner">
             ${slides.map((slide: any, index: number) => `
             <div class="slide ${index === 0 ? 'active' : ''}" style="background-image: url('${slide.image || ''}')">
@@ -196,6 +204,7 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
                 </button>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
@@ -641,11 +650,18 @@ customElements.define('feature-slider', FeatureSliderElement);`;
         * {
             font-family: ${design.fontFamily || 'system-ui, -apple-system, sans-serif'};
         }
+        .module-wrapper {
+            min-height: 400px;
+            display: flex;
+            ${layout.horizontalAlign === 'links' ? 'justify-content: flex-start;' : layout.horizontalAlign === 'rechts' ? 'justify-content: flex-end;' : 'justify-content: center;'}
+            ${layout.verticalAlign === 'oben' ? 'align-items: flex-start;' : layout.verticalAlign === 'unten' ? 'align-items: flex-end;' : 'align-items: center;'}
+            padding: 16px;
+            background-color: #f8f9fa;
+        }
         .viewer-container {
             position: relative;
             width: ${layout.width === 'voll' ? '100%' : layout.width === 'breit' ? '90%' : layout.width === 'schmal' ? '60%' : '80%'};
             max-width: 800px;
-            margin: 0 auto;
             background-color: ${design.backgroundColor};
             border-radius: 8px;
             overflow: hidden;
@@ -656,7 +672,7 @@ customElements.define('feature-slider', FeatureSliderElement);`;
         .viewer-inner {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: ${layout.height === 'niedrig' ? '200px' : layout.height === 'hoch' ? '350px' : layout.height === 'sehr-hoch' ? '400px' : '300px'};
             background: #f0f0f0;
             border-radius: 8px;
             overflow: hidden;
@@ -725,7 +741,8 @@ customElements.define('feature-slider', FeatureSliderElement);`;
     </style>
 </head>
 <body>
-    <div class="viewer-container">
+    <div class="module-wrapper">
+        <div class="viewer-container">
         <div class="viewer-inner" id="viewer">
             <img class="viewer-image" id="viewerImage" src="${images[0] || ''}" alt="360° View">
         </div>
@@ -744,6 +761,7 @@ customElements.define('feature-slider', FeatureSliderElement);`;
                 <span>Bild ${images.length}</span>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
@@ -1274,11 +1292,18 @@ customElements.define('viewer-360', Viewer360Element);`;
         * {
             font-family: ${design.fontFamily || 'system-ui, -apple-system, sans-serif'};
         }
+        .module-wrapper {
+            min-height: 400px;
+            display: flex;
+            ${layout.horizontalAlign === 'links' ? 'justify-content: flex-start;' : layout.horizontalAlign === 'rechts' ? 'justify-content: flex-end;' : 'justify-content: center;'}
+            ${layout.verticalAlign === 'oben' ? 'align-items: flex-start;' : layout.verticalAlign === 'unten' ? 'align-items: flex-end;' : 'align-items: center;'}
+            padding: 16px;
+            background-color: #f8f9fa;
+        }
         .hotspot-container {
             position: relative;
             width: ${layout.width === 'voll' ? '100%' : layout.width === 'breit' ? '90%' : layout.width === 'schmal' ? '60%' : '80%'};
             max-width: 800px;
-            margin: 0 auto;
             background-color: ${design.backgroundColor};
             border-radius: 8px;
             overflow: hidden;
@@ -1289,7 +1314,7 @@ customElements.define('viewer-360', Viewer360Element);`;
         .hotspot-inner {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: ${layout.height === 'niedrig' ? '200px' : layout.height === 'hoch' ? '350px' : layout.height === 'sehr-hoch' ? '400px' : '300px'};
             background: ${backgroundImage ? `url('${backgroundImage}')` : 'linear-gradient(to right, #e5e7eb, #d1d5db)'};
             background-size: cover;
             background-position: center;
@@ -1362,7 +1387,8 @@ customElements.define('viewer-360', Viewer360Element);`;
     </style>
 </head>
 <body>
-    <div class="hotspot-container">
+    <div class="module-wrapper">
+        <div class="hotspot-container">
         <div class="hotspot-inner">
             ${!backgroundImage ? '<div class="hotspot-fallback">Kein Hintergrundbild</div>' : ''}
             ${hotspots.map((hotspot: any) => `
@@ -1371,6 +1397,8 @@ customElements.define('viewer-360', Viewer360Element);`;
                 ${hotspot.text ? `<div class="hotspot-tooltip">${hotspot.text}</div>` : ''}
             </div>`).join('')}
         </div>
+    </div>
+    </div>
     </div>
 </body>
 </html>`;
