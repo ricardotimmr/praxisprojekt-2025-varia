@@ -162,20 +162,30 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
             background: ${design.accentColor};
             transform: scale(1.25);
         }
-        .play-button {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: ${design.accentColor};
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12px;
+        .logo {
+            position: absolute;
+            z-index: 20;
+            height: 32px;
+            width: auto;
+            max-width: 80px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.8);
             backdrop-filter: blur(4px);
-            transition: all 0.2s ease;
+            border-radius: 4px;
+            padding: 4px 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .logo-feature-slider {
+            top: 16px;
+            right: 16px;
+        }
+        .logo-360-viewer {
+            top: 16px;
+            right: 16px;
+        }
+        .logo-hotspot-graphics {
+            top: 16px;
+            left: 16px;
         }
     </style>
 </head>
@@ -183,6 +193,7 @@ export const ExportDialog = ({ isOpen, onClose, config }: ExportDialogProps) => 
     <div class="module-wrapper">
         <div class="slider-container">
         <div class="slider-inner">
+            ${(design.logoFile || design.logoUrl) ? `<img src="${design.logoFile || design.logoUrl}" alt="Customer Logo" class="logo logo-feature-slider" />` : ''}
             ${slides.map((slide: any, index: number) => `
             <div class="slide ${index === 0 ? 'active' : ''}" style="background-image: url('${slide.image || ''}')">
                 ${!slide.image ? `<div style="background: linear-gradient(to right, #e5e7eb, #d1d5db); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #6b7280;">Slide ${index + 1}</div>` : ''}
@@ -353,6 +364,27 @@ const FeatureSlider = () => {
 
   return (
     <div style={containerStyle}>
+      {(design.logoFile || design.logoUrl) && (
+        <img 
+          src={design.logoFile || design.logoUrl} 
+          alt="Customer Logo" 
+          style={{
+            position: 'absolute',
+            top: '16px',
+            right: '16px',
+            zIndex: 20,
+            height: '32px',
+            width: 'auto',
+            maxWidth: '80px',
+            objectFit: 'contain',
+            background: 'rgba(255,255,255,0.8)',
+            backdropFilter: 'blur(4px)',
+            borderRadius: '4px',
+            padding: '4px 8px',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+          }}
+        />
+      )}
       <div style={sliderInnerStyle}>
         {slides.map((slide, index) => (
           <div
@@ -743,6 +775,7 @@ customElements.define('feature-slider', FeatureSliderElement);`;
 <body>
     <div class="module-wrapper">
         <div class="viewer-container">
+        ${(design.logoFile || design.logoUrl) ? `<img src="${design.logoFile || design.logoUrl}" alt="Customer Logo" class="logo logo-360-viewer" />` : ''}
         <div class="viewer-inner" id="viewer">
             <img class="viewer-image" id="viewerImage" src="${images[0] || ''}" alt="360° View">
         </div>
@@ -981,6 +1014,27 @@ const Viewer360 = () => {
 
   return (
     <div style={containerStyle}>
+      {(design.logoFile || design.logoUrl) && (
+        <img 
+          src={design.logoFile || design.logoUrl} 
+          alt="Customer Logo" 
+          style={{
+            position: 'absolute',
+            top: '16px',
+            right: '16px',
+            zIndex: 10,
+            height: '32px',
+            width: 'auto',
+            maxWidth: '80px',
+            objectFit: 'contain',
+            background: 'rgba(255,255,255,0.8)',
+            backdropFilter: 'blur(4px)',
+            borderRadius: '4px',
+            padding: '4px 8px',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+          }}
+        />
+      )}
       <div 
         style={viewerStyle}
         onWheel={handleWheel}
@@ -1171,6 +1225,7 @@ export default Viewer360;`;
         }
       </style>
       
+      ${(design.logoFile || design.logoUrl) ? `<img src="${design.logoFile || design.logoUrl}" alt="Customer Logo" class="logo logo-360-viewer" />` : ''}
       <div class="viewer-inner" id="viewer">
         <img class="viewer-image" id="viewerImage" src="\${this.images[0] || ''}" alt="360° View">
       </div>
@@ -1389,6 +1444,7 @@ customElements.define('viewer-360', Viewer360Element);`;
 <body>
     <div class="module-wrapper">
         <div class="hotspot-container">
+        ${(design.logoFile || design.logoUrl) ? `<img src="${design.logoFile || design.logoUrl}" alt="Customer Logo" class="logo logo-hotspot-graphics" />` : ''}
         <div class="hotspot-inner">
             ${!backgroundImage ? '<div class="hotspot-fallback">Kein Hintergrundbild</div>' : ''}
             ${hotspots.map((hotspot: any) => `
@@ -1487,6 +1543,27 @@ const HotspotGraphics = () => {
         }
       \`}</style>
       <div style={containerStyle}>
+        {(design.logoFile || design.logoUrl) && (
+          <img 
+            src={design.logoFile || design.logoUrl} 
+            alt="Customer Logo" 
+            style={{
+              position: 'absolute',
+              top: '16px',
+              left: '16px',
+              zIndex: 10,
+              height: '32px',
+              width: 'auto',
+              maxWidth: '80px',
+              objectFit: 'contain',
+              background: 'rgba(255,255,255,0.8)',
+              backdropFilter: 'blur(4px)',
+              borderRadius: '4px',
+              padding: '4px 8px',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+            }}
+          />
+        )}
         <div style={hotspotInnerStyle}>
           {!backgroundImage && (
             <div style={{
@@ -1640,6 +1717,7 @@ export default HotspotGraphics;`;
         }
       </style>
       
+      ${(design.logoFile || design.logoUrl) ? `<img src="${design.logoFile || design.logoUrl}" alt="Customer Logo" class="logo logo-hotspot-graphics" />` : ''}
       <div class="hotspot-inner">
         \${!this.backgroundImage ? '<div class="hotspot-fallback">Kein Hintergrundbild</div>' : ''}
         \${this.hotspots.map((hotspot) => \`
