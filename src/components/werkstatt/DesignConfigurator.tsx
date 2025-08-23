@@ -153,15 +153,57 @@ export const DesignConfigurator = ({ config, onChange }: DesignConfiguratorProps
           </div>
           
           <div>
-            <Label htmlFor="logoUrl">Logo URL (Kunde)</Label>
-            <Input
-              id="logoUrl"
-              type="url"
-              value={config.logoUrl}
-              onChange={(e) => onChange('logoUrl', e.target.value)}
-              className="mt-2"
-              placeholder="https://example.com/logo.png"
-            />
+            <Label htmlFor="logoUrl">Logo (Kunde)</Label>
+            <div className="space-y-3 mt-2">
+              <div>
+                <Label htmlFor="logoUrl" className="text-sm text-gray-600">URL eingeben</Label>
+                <Input
+                  id="logoUrl"
+                  type="url"
+                  value={config.logoUrl}
+                  onChange={(e) => onChange('logoUrl', e.target.value)}
+                  className="mt-1"
+                  placeholder="https://example.com/logo.png"
+                />
+              </div>
+              
+              <div className="relative">
+                <Label htmlFor="logoFile" className="text-sm text-gray-600">Oder Datei hochladen</Label>
+                <div className="mt-1">
+                  <Input
+                    id="logoFile"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                          const result = event.target?.result as string;
+                          onChange('logoFile', result);
+                          // Clear URL when file is uploaded
+                          onChange('logoUrl', '');
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                    className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+                  />
+                  {config.logoFile && (
+                    <div className="mt-2 flex items-center space-x-2">
+                      <img src={config.logoFile} alt="Logo Preview" className="w-12 h-12 object-contain rounded border" />
+                      <button
+                        type="button"
+                        onClick={() => onChange('logoFile', '')}
+                        className="text-sm text-red-600 hover:text-red-800"
+                      >
+                        Entfernen
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

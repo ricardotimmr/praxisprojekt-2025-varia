@@ -31,6 +31,7 @@ export type DesignConfig = {
   textColor: string;
   headingColor: string;
   logoUrl: string;
+  logoFile: string;
   fontFamily: string;
 };
 
@@ -61,6 +62,7 @@ const Werkstatt = () => {
     textColor: '#8E8D8A',
     headingColor: '#E43D12',
     logoUrl: '',
+    logoFile: '',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   });
 

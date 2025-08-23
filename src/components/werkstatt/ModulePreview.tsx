@@ -435,12 +435,35 @@ export const ModulePreview = ({
     );
   };
 
+  const renderLogo = () => {
+    const logoSrc = designConfig.logoFile || designConfig.logoUrl;
+    if (!logoSrc) return null;
+
+    // Different positioning for each module type
+    const logoPositionClass = {
+      'feature-slider': 'absolute top-4 right-4 z-20',
+      '360-viewer': 'absolute top-4 right-4 z-10',
+      'hotspot-graphics': 'absolute top-4 left-4 z-10'
+    }[moduleType];
+
+    return (
+      <div className={logoPositionClass}>
+        <img 
+          src={logoSrc} 
+          alt="Customer Logo" 
+          className="h-8 w-auto max-w-20 object-contain bg-white/80 backdrop-blur-sm rounded px-2 py-1 shadow-sm"
+        />
+      </div>
+    );
+  };
+
   const renderModule = () => {
     return (
       <div className="relative" style={{ fontFamily: designConfig.fontFamily || 'inherit' }}>
         {moduleType === 'feature-slider' && renderFeatureSlider()}
         {moduleType === '360-viewer' && render360Viewer()}
         {moduleType === 'hotspot-graphics' && renderHotspotGraphics()}
+        {renderLogo()}
       </div>
     );
   };
