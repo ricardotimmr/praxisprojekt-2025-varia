@@ -44,6 +44,15 @@ Der Fokus im Praxisprojekt liegt auf der Frontend-Entwicklung und der Umsetzung 
 
 ---
 
+### Live-Prototyp
+
+Der aktuelle **Prototyp des Tools** ist online verfügbar und kann direkt im Browser getestet werden.  
+Er demonstriert die zentralen Funktionen wie **Modulkonfiguration**, **Live-Preview** und **Code-Export**.
+
+🔗 **Live-Demo:** [https://praxisprojekt-2025-varia.vercel.app/](https://praxisprojekt-2025-varia.vercel.app/)
+
+---
+
 ## Projektdokumentation und Ressourcen
 
 Die technische und inhaltliche Dokumentation wird im zugehörigen GitHub-Wiki gepflegt:
