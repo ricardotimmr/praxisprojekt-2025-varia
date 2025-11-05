@@ -69,6 +69,7 @@ const Werkstatt = () => {
   const [moduleSettings, setModuleSettings] = useState<Record<string, any>>({});
   const [viewportSize, setViewportSize] = useState<ViewportSize>('desktop');
   const [isPreviewPinned, setIsPreviewPinned] = useState(false);
+  const [isFullscreenPreview, setIsFullscreenPreview] = useState(false);
   const [showExportDialog, setShowExportDialog] = useState(false);
 
   const handleLayoutChange = (key: keyof LayoutConfig, value: string) => {
@@ -169,7 +170,43 @@ const Werkstatt = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className={`${isFullscreenPreview ? 'fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-8' : 'container mx-auto px-6 py-8'}`}>
+        {isFullscreenPreview ? (
+          /* Fullscreen Preview */
+          <div className="w-full h-full flex flex-col animate-fade-in">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-white text-xl font-semibold">Vollbild-Vorschau</h2>
+              <div className="flex items-center space-x-4">
+                <PreviewControls 
+                  viewportSize={viewportSize}
+                  onViewportChange={setViewportSize}
+                  isPreviewPinned={false}
+                  onTogglePin={() => {}}
+                  isFullscreen={true}
+                  onToggleFullscreen={setIsFullscreenPreview}
+                />
+                <Button 
+                  onClick={() => setIsFullscreenPreview(false)}
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10"
+                >
+                  Zurück zum Editor
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1 overflow-auto">
+              <ModulePreview 
+                moduleType={selectedModule}
+                moduleSettings={moduleSettings}
+                layoutConfig={layoutConfig}
+                designConfig={designConfig}
+                viewportSize={viewportSize}
+                onModuleSettingsChange={handleModuleSettingsChange}
+              />
+            </div>
+          </div>
+        ) : (
+          <>
         {/* Mobile/Tablet Layout */}
         <div className="lg:hidden">
           {/* Preview Panel - Sticky on small screens when pinned */}
@@ -183,6 +220,8 @@ const Werkstatt = () => {
                     onViewportChange={setViewportSize}
                     isPreviewPinned={isPreviewPinned}
                     onTogglePin={setIsPreviewPinned}
+                    isFullscreen={false}
+                    onToggleFullscreen={setIsFullscreenPreview}
                   />
                 </div>
               </CardHeader>
@@ -253,6 +292,8 @@ const Werkstatt = () => {
                       onViewportChange={setViewportSize}
                       isPreviewPinned={isPreviewPinned}
                       onTogglePin={setIsPreviewPinned}
+                      isFullscreen={false}
+                      onToggleFullscreen={setIsFullscreenPreview}
                     />
                   </div>
                 </CardHeader>
@@ -311,9 +352,11 @@ const Werkstatt = () => {
             </Card>
           </div>
         </div>
+        </>
+        )}
       </div>
 
-      <ExportDialog 
+      <ExportDialog
         isOpen={showExportDialog}
         onClose={() => setShowExportDialog(false)}
         config={getConfig()}

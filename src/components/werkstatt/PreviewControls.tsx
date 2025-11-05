@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Monitor, Tablet, Smartphone, Pin, PinOff } from "lucide-react";
+import { Monitor, Tablet, Smartphone, Pin, PinOff, Maximize2, Minimize2 } from "lucide-react";
 import type { ViewportSize } from "@/pages/Werkstatt";
 
 interface PreviewControlsProps {
@@ -7,13 +7,17 @@ interface PreviewControlsProps {
   onViewportChange: (size: ViewportSize) => void;
   isPreviewPinned: boolean;
   onTogglePin: (pinned: boolean) => void;
+  isFullscreen: boolean;
+  onToggleFullscreen: (fullscreen: boolean) => void;
 }
 
 export const PreviewControls = ({ 
   viewportSize, 
   onViewportChange, 
   isPreviewPinned, 
-  onTogglePin 
+  onTogglePin,
+  isFullscreen,
+  onToggleFullscreen
 }: PreviewControlsProps) => {
   const viewports = [
     { id: 'desktop' as const, icon: Monitor, label: 'Desktop' },
@@ -43,18 +47,35 @@ export const PreviewControls = ({
       </div>
 
       {/* Pin Toggle */}
+      {!isFullscreen && (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => onTogglePin(!isPreviewPinned)}
+          className={`${
+            isPreviewPinned 
+              ? 'text-site-accent bg-site-accent/10' 
+              : 'text-site-text-light hover:text-site-accent'
+          }`}
+          title={isPreviewPinned ? 'Vorschau lösen' : 'Vorschau anheften'}
+        >
+          {isPreviewPinned ? <PinOff className="w-4 h-4" /> : <Pin className="w-4 h-4" />}
+        </Button>
+      )}
+
+      {/* Fullscreen Toggle */}
       <Button
         variant="ghost"
         size="sm"
-        onClick={() => onTogglePin(!isPreviewPinned)}
+        onClick={() => onToggleFullscreen(!isFullscreen)}
         className={`${
-          isPreviewPinned 
-            ? 'text-site-accent bg-site-accent/10' 
+          isFullscreen 
+            ? 'text-white bg-white/10' 
             : 'text-site-text-light hover:text-site-accent'
         }`}
-        title={isPreviewPinned ? 'Vorschau lösen' : 'Vorschau anheften'}
+        title={isFullscreen ? 'Vollbild verlassen' : 'Vollbild-Vorschau'}
       >
-        {isPreviewPinned ? <PinOff className="w-4 h-4" /> : <Pin className="w-4 h-4" />}
+        {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
       </Button>
     </div>
   );
